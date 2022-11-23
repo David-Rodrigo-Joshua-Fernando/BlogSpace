@@ -1,4 +1,4 @@
-package com.blogspace.blogspace;
+package com.blogspace;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

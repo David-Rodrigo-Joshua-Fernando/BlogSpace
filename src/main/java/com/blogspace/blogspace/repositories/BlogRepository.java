@@ -1,6 +1,6 @@
-package com.blogspace.repositories;
+package com.blogspace.blogspace.repositories;
 
-import com.blogspace.models.Blog;
+import com.blogspace.blogspace.models.Blog;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BlogRepository extends JpaRepository <Blog, Long> {

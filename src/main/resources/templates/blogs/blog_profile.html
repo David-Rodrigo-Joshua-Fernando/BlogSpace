@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="partials/partialsBlog.html :: head ('BlogSpace Profile')">
+    <meta charset="UTF-8">
+    <title>BlogSpace Profile Page</title>
+</head>
+<body>
+<nav th:replace="partials/partialsBlog :: bootstrap-nav"></nav>
+<h1>Profile</h1>
+<div th:replace="partials/partialsProfile :: bootstrap-profile"></div>
+<div th:replace="partials/partialsProfile :: bootstrap-cards"></div>
+
+</body>
+</html>

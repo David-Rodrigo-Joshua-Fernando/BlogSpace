@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
+<head th:replace="partials/partialsBlog.html :: head ('BlogSpace')">
     <meta charset="UTF-8">
-    <title>Blog Main Page</title>
+    <title>BlogSpace</title>
 </head>
+
 <body>
-<h1>Welcome</h1>
+<nav th:replace="partials/partialsBlog :: bootstrap-nav"></nav>
+<nav th:replace="partials/partialsBlog :: bootstrap-side"></nav>
+
+<h1>Hello</h1>
+
+
 </body>
 </html>

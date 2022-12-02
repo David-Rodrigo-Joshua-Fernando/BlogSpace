@@ -1,8 +1,9 @@
 package com.blogspace.services;
 
-import com.codeup.springblog.models.SpringBlogUserDetails;
-import com.codeup.springblog.models.Users;
-import com.codeup.springblog.repositories.UserRepository;
+
+import com.blogspace.models.SpringBlogUserDetails;
+import com.blogspace.models.User;
+import com.blogspace.repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -19,7 +20,7 @@ public class SpringBlogUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users user = usersDao.findByUsername(username);
+        User user = usersDao.findByUsername(username);
         if (user == null){
             throw new UsernameNotFoundException("User details not found for user:" + username);
         } else {

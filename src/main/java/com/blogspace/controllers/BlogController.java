@@ -1,7 +1,7 @@
-package com.blogspace.blogspace.controllers;
+package com.blogspace.controllers;
 
-import com.blogspace.blogspace.models.Blog;
-import com.blogspace.blogspace.repositories.BlogRepository;
+import com.blogspace.models.Blog;
+import com.blogspace.repositories.BlogRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

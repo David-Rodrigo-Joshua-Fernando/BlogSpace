@@ -23,6 +23,7 @@ public class Blog {
     private User user;
 
     //Getters and Setters
+    //Adding a comment to the Blog Class
 
 
     public long getId() {

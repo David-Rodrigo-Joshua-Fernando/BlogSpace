@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -13,10 +14,10 @@ public class SecurityConfiguration {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .antMatchers("/posts/create", "/posts/{id}/delete", "/posts/{id}/edit", "/posts/myPosts")
+                .antMatchers("/blog_profile")
                 .authenticated()
-                .antMatchers("/","/posts","/posts/{id}").permitAll()
-                .and().formLogin().loginPage("/login").defaultSuccessUrl("/posts")
+                .antMatchers("/", "/blogs").permitAll()
+                .and().formLogin().loginPage("/login").defaultSuccessUrl("/blogs")
                 .and().logout()
                 .and().httpBasic();
         return http.build();
@@ -26,4 +27,15 @@ public class SecurityConfiguration {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
+
+// This is if you don't want a password encoder
+
+//    @Bean
+//    public PasswordEncoder passwordEncoder(){
+//        return NoOpPasswordEncoder.getInstance();
+//    }
+
 }
+
+

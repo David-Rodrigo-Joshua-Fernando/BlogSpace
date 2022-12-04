@@ -130,17 +130,21 @@
 
 
 <!--Cards-->
-<div th:each= "blogs : ${blogs}" th:fragment="bootstrap-cards" class="card">
-  <div class="card-header">
-    <p th:text="${blogs.title}"> </p>
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <footer class="blockquote-footer" th:text="${blogs.body}"> <cite title="Source Title">User</cite></footer>
-    </blockquote>
+<div th:fragment="bootstrap-cards" class="rowA">
+  <div class="column" th:each="blog : ${blogs}">
+    <div class="card">
+      <h5 th:text="${blog.title}"></h5>
+      <span th:text="${blog.body}"></span>
+      <span th:text="${blog.user.getEmail()}"></span>
+      </span>
+      <br>
+      <h5> Created By: <span th:text="${blog.user.getUsername()}"></span></h5>
+
+<!--      <a th:href="@{|/posts/${post.id}/edit|}"><button>Edit </button></a>-->
+<!--      <a th:href="@{|/posts/${post.id}/delete|}"><button>Delete </button></a>-->
+    </div>
   </div>
 </div>
-
 
 
 

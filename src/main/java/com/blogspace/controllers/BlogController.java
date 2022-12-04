@@ -64,7 +64,7 @@ public class BlogController {
     public String allPostsBlog(Model model){
 
         List<Blog> blog = blogDao.findAll();
-        model.addAttribute("blog", blog);
+        model.addAttribute("blogs", blog);
         return "/blog_profile";
     }
 

@@ -7,10 +7,7 @@ import com.blogspace.repositories.UserRepository;
 import com.blogspace.services.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -69,9 +66,30 @@ public class BlogController {
     }
 
 //     About us page
-@GetMapping("/about")
-public String aboutUsPage(){
-    return "/aboutUs";
-}
+    @GetMapping("/about")
+    public String aboutUsPage(){
+        return "/aboutUs";
+    }
+
+//Edit
+    //    Edit your post
+
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable long id){
+        Blog blog = blogDao.findById(id);
+        model.addAttribute("blog", blog);
+        return "/edit";
+    }
+
+
+    @PostMapping("/{id}/edit")
+    public String editPost(@ModelAttribute Blog blog){
+        User user = Utils.currentUser();
+        blog.setUser(user);
+        blogDao.save(blog);
+        return "redirect:/blogs/profile";
+    }
+
+
 
 }

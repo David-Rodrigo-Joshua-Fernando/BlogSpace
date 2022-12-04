@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
-<head th:replace="partials/partials.html :: head ('edit')" >
+<head th:replace="partials/partialsProfile :: head ('edit')" >
     <meta charset="UTF-8">
     <title th:text="${title}">edit</title>
 <body>
@@ -14,7 +14,7 @@
     Email: <span th:text="${#authentication.principal.email}"/>
 </div>
 
-<nav th:replace="partials/partials.html :: bootstrap-nav"></nav>
+<nav th:replace="partials/partialsProfile :: bootstrap-nav"></nav>
 
 
 <h1>Edit</h1>
@@ -23,12 +23,12 @@
 
 
 <fieldset class="postMiddleForm">
-    <legend th:replace="partials/partials.html :: bootstrap-jumbotron"></legend>
-    <form th:action="@{|/posts/${post.id}/edit|}" method="post" th:object="${post}">
-        <label for="body">Write your Post:</label>
-        <input type="text" id="body" name="body" th:field="*{body}">
+<!--    <legend th:replace="partials/partialsProfile :: bootstrap-jumbotron"></legend>-->
+    <form th:action="@{|/blogs/${blog.id}/edit|}" method="post" th:object="${blog}">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" th:field="*{title}">
+        <label for="body">Write your Post:</label>
+        <input type="text" id="body" name="body" th:field="*{body}">
 
         <input type="submit" value="submit">
     </form>

@@ -52,7 +52,7 @@ public class BlogController {
         blog.setUser(user);
         blogDao.save(blog);
 //        emailService.prepareAndSend(user, post.getTitle(), post.getBody());
-        return "redirect:/blogs/create";
+        return "redirect:/blogs/profile";
     }
 
 
@@ -91,5 +91,17 @@ public class BlogController {
     }
 
 
+    //    This is the delete method
+
+    @GetMapping("/{id}/delete")
+    public String deletePost( Model model, @PathVariable long id){
+        Blog post = blogDao.findById(id);
+        model.addAttribute("blog", new Blog());
+        blogDao.delete(post);
+        return "redirect:/blogs/profile";
+
+    }
+
+// There is a bug where if you keep creating post it stops working but it starts working after you log back in
 
 }

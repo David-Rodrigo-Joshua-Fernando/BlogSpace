@@ -7,9 +7,11 @@
 <body>
 
 <fieldset class="postMiddleForm">
+    <nav th:replace="partials/partialsProfile :: bootstrap-nav"></nav>
+
     <div th:replace="partials/partialsBlog :: bootstrap-jumbotron"></div>
 
-    <form th:action="@{/blogs/new}" th:method="post" th:object="${blog}">
+    <form th:action="@{/blogs/create}" th:method="post" th:object="${blog}">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" th:field="*{title}">
         <label for="body">Write your Post:</label>

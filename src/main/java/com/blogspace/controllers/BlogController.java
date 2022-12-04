@@ -30,8 +30,8 @@ public class BlogController {
     //    This shows you all your post
     @GetMapping
     public String homePage(Model model){
-        List<Blog> allBlogs = blogDao.findAll();
-        model.addAttribute("allBlogs", allBlogs);
+        List<Blog> blogs = blogDao.findAll();
+        model.addAttribute("blogs", blogs);
         return "blog";
     }
 
@@ -48,15 +48,30 @@ public class BlogController {
 
 
     // This lets you add a post
-    @PostMapping("/new")
+    @PostMapping("/create")
     public String addPostWithUser(@ModelAttribute Blog blog){
 //        code for the setting user is in utils
-//        User user = Utils.currentUser();
-//        blog.setUser(user);
-//        blogDao.save(blog);
+        User user = Utils.currentUser();
+        blog.setUser(user);
+        blogDao.save(blog);
 //        emailService.prepareAndSend(user, post.getTitle(), post.getBody());
         return "redirect:/blogs/create";
     }
 
+
+    //    This lets you view your profile
+    @GetMapping("/profile")
+    public String allPostsBlog(Model model){
+
+        List<Blog> blog = blogDao.findAll();
+        model.addAttribute("blog", blog);
+        return "/blog_profile";
+    }
+
+//     About us page
+@GetMapping("/about")
+public String aboutUsPage(){
+    return "/aboutUs";
+}
 
 }

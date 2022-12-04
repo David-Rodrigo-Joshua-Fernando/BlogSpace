@@ -15,7 +15,7 @@
 
 <!--Nav bar-->
 <nav th:fragment="bootstrap-nav" class="navbar navbar-expand-md bg-white navbar-white sticky-top">
-  <a class="navbar-brand" href="blogs">BlogSpace</a>
+  <a class="navbar-brand" href="/blogs">BlogSpace</a>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -34,11 +34,15 @@
         <a class="nav-link" href="/blogs/about">About Us</a>
       </li>
 
-      <form th:action="@{/logout}" th:method="post">
-        <button id="logout">Logout</button>
-      </form>
+      <ul class="nav navbar-nav">
+        <form th:action="@{/logout}" th:method="post">
+          <button id="logout">Logout</button>
+        </form>
+
+      </ul>
+
     </ul>
-  </div>
+      </div>
 
 
 </nav>

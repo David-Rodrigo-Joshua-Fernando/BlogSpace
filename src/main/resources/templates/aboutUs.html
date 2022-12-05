@@ -1,94 +1,60 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="partials/partialsBlog.html :: head ('About Us')">
-    <meta charset="UTF-8">
-    <title>About Us</title>
+<title>About Us</title>
 </head>
 <body>
 <nav th:replace="partials/partialsProfile :: bootstrap-nav"></nav>
 
 <section class="jumbotron text-center">
     <div class="container">
-        <h1 class="jumbotron-heading">Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+        <h1 class="jumbotron-heading">Developers</h1>
+        <p class="">This application is brought to you by the following developers: </p>
         <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            <a href="https://github.com/orgs/David-Rodrigo-Joshua-Fernando/repositories">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+            </a>
         </p>
     </div>
 </section>
 
 
-<div class="row">
-    <div class="col-md-4">
+<div class="row mx-3">
+    <div class="col-6 col-lg-3">
         <div class="card mb-4 box-shadow">
-            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="img/rodrigo.jpeg" data-holder-rendered="true">
+            <img class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="/img/rodrigo.jpeg" data-holder-rendered="true">
             <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
+                <p class="card-text">Solution-focused, versatile professional is offering a diverse background supporting U.S. military operations in roles of increasing responsibility during a nine-year career as a military leader as well as experience in personal fitness and group fitness tracking. Effective communicator and inventive thinker who quickly masters new roles and technologies to achieve positive results and accomplish goals while increasing efficiency and improving team cohesion.</p>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-6 col-lg-3">
         <div class="card mb-4 box-shadow">
-            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="img/nft_me.png" data-holder-rendered="true">
+            <img class="card-img-top"  alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="/img/nft_me.png" data-holder-rendered="true">
             <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
+                <p class="card-text">Accomplished, committed, and dedicated bilingual US Army veteran with over 5 years of leadership and customer service experience. The desire to learn, broaden, and employ skills used in a community that promotes growth and development is why I'm excited to enter the technology industry as a web-developer.</p>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-6 col-lg-3">
         <div class="card mb-4 box-shadow">
-            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
-                 src="img/fernando.PNG" height="862" width="868" data-holder-rendered="true">
+            <img class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+                 src="/img/fernando.PNG" height="862" width="868" data-holder-rendered="true">
 
             <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
+                <p class="card-text">Professional Software Developer and Marine Corps Veteran with project management, leadership, training development, and process improvement skills. Merging military experience with full-stack skill to develop innovative technology, I am able to bridge the gap between consumer and business by improving website functionality to bolster the consumer's ability to access needed information.</p>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-6 col-lg-3">
         <div class="card mb-4 box-shadow">
-            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22288%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20288%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_184d3875634%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_184d3875634%22%3E%3Crect%20width%3D%22288%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2296.8203125%22%20y%3D%22118.8%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+            <img class="card-img-top" style="height: 225px; width: 100%; display: block;" src="/img/Josh_profile.png" data-holder-rendered="true">
             <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                </div>
+                <p class="card-text">Software developer with prior military experience in Food Service and Human Resources. My career transition stems from self-taught programming experience building simple websites and the drive to program computer games.</p>
             </div>
         </div>
     </div>
 </div>
 
-
-
-<div class="card">
-
-</div>
 
 </body>
 </html>

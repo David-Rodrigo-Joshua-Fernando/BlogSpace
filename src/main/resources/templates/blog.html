@@ -8,8 +8,16 @@
 <body>
 <nav th:replace="partials/partialsBlog :: bootstrap-nav"></nav>
 <nav th:replace="partials/partialsBlog :: bootstrap-side"></nav>
-
-<h1>Hello</h1>
+<h1>Your feed:</h1>
+<ul th:each="blog : ${allBlogs}">
+    <li>
+        <h2 th:text="${blog.title}"></h2>
+        <p th:text="${blog.body}"></p>
+        <td><a th:if="${blog.user.id} == ${#authentication.principal.id}" class="btn btn-success">Update</a></td>
+        <td><a th:if="${blog.user.id} == ${#authentication.principal.id}" class="btn btn-warning">DELETE</a></td>
+    </li>
+</ul>
+<div th:replace="partials/partialsBlog.html :: bootstrap-footer"></div>
 
 
 </body>

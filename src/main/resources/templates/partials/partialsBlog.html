@@ -107,7 +107,10 @@
     <!-- Copyright -->
 </footer>
 
-
+<div th:fragment="scripts" th:remove="tag">
+    <script th:src="@{/js/jquery-3.6.1.min.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</div>
 
 </body>
 </html>

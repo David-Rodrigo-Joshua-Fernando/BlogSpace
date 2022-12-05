@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
 <head th:fragment="head (title)">
   <meta charset="UTF-8">
   <title th:text="${title}">Profile</title>
@@ -162,10 +164,12 @@
       </span>
       <br>
       <h5> Created By: <span th:text="${blog.user.getUsername()}"></span></h5>
-      <p th:if="${blog.user.id} == ${#authentication.principal.id}">
-        <a th:data-id="${blog.id}" class="editButton"><button>Edit </button></a>
-        <a th:href="${blog.id}" class="deleteButton"><button>Delete </button></a>
-      </p>
+      <div sec:authorize="isAuthenticated()">
+        <p th:if="${blog.user.id} == ${#authentication.principal.id}">
+          <a th:data-id="${blog.id}" class="editButton"><button>Edit </button></a>
+          <a th:data-id="${blog.id}" class="deleteButton"><button>Delete</button></a>
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -183,7 +187,10 @@
   <!-- Copyright -->
 </footer>
 
-
+<div th:fragment="scripts" th:remove="tag">
+  <script th:src="@{/js/jquery-3.6.1.min.js}"></script>
+  <script th:src="@{/js/main.js}"></script>
+</div>
 
 </body>
 </html>

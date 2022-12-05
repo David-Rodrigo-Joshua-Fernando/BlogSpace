@@ -65,7 +65,7 @@ public class BlogController {
         return "/blog_profile";
     }
 
-//     About us page
+    //     About us page
     @GetMapping("/about")
     public String aboutUsPage(){
         return "/aboutUs";

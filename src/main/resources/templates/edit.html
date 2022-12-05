@@ -23,7 +23,7 @@
 
 
 <fieldset class="postMiddleForm">
-<!--    <legend th:replace="partials/partialsProfile :: bootstrap-jumbotron"></legend>-->
+    <!--    <legend th:replace="partials/partialsProfile :: bootstrap-jumbotron"></legend>-->
     <form th:action="@{|/blogs/${blog.id}/edit|}" method="post" th:object="${blog}">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" th:field="*{title}">

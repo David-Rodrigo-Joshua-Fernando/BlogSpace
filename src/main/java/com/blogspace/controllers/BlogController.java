@@ -77,6 +77,10 @@ public class BlogController {
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable long id){
         Blog blog = blogDao.findById(id);
+        User user = Utils.currentUser();
+        if(blog.getUser().getId() != user.getId()){
+            return "redirect:/blogs";
+        }
         model.addAttribute("blog", blog);
         return "/edit";
     }

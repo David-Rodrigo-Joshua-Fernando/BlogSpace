@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:replace="partials/partialsBlog.html :: head ('BlogSpace')">
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <title>BlogSpace</title>
 </head>
 
 <body>
 <nav th:replace="partials/partialsProfile :: bootstrap-nav"></nav>
-<nav th:replace="partials/partialsBlog :: bootstrap-side"></nav>
+<nav th:replace="partials/partialsProfile :: bootstrap-side"></nav>
 
-<div th:replace="partials/partialsProfile :: bootstrap-cards"></div>
+<div th:replace="partials/partialsProfile :: bootstrap-cards-home"></div>
 
 
-
+<script src="/js/main.js"></script>
 </body>
 </html>

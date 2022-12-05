@@ -81,4 +81,15 @@ body{
     place-items: center;
 }
 
+.postCards {
+    display: grid;
+    place-content: center;
+}
+
+
+
+
+
+
+
 

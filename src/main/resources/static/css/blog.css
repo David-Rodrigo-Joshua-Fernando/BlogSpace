@@ -97,6 +97,30 @@ display: flex;
 }
 
 
+.loginPage {
+    /*display: flex;*/
+    /*justify-content: center;*/
+    margin: 10% 15%
+
+}
+
+.loginPage > form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 10%
+}
+
+h1.loginHeader {
+    align-self: center;
+}
+
+.invalidText{
+    color: #E80B0BBA;
+    align-self: center;
+}
+
+
 
 
 

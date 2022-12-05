@@ -13,10 +13,13 @@
   <input id="username" th:field="*{username}">
   <br><br>
   <label for="email">Email</label>
-  <input id="email" th:field="*{email}">
+  <input id="email" th:field="*{email}" required="required">
+  <span id="email.errors"  class="errors">Email is required</span>
   <br><br>
   <label for="password">Password</label>
-  <input id="password" type="password" th:field="*{password}">
+  <input id="password" type="password" th:field="*{password}" required="required">
+  <span id="password.errors"  class="errors">Password is required</span>
+
   <br><br>
   <input type="submit" value="Sign me up!">
 </form>

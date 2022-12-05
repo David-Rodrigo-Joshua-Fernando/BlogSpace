@@ -145,10 +145,12 @@
       </span>
       <br>
       <h5> Created By: <span th:text="${blog.user.getUsername()}"></span></h5>
-      <p th:if="${blog.user.id} == ${#authentication.principal.id}">
-      <a th:data-id="${blog.id}" class="editButton"><button>Edit </button></a>
-      <a th:href="${blog.id}" class="deleteButton"><button>Delete </button></a>
-    </p>
+      <div sec:authorize="isAuthenticated()">
+        <p th:if="${blog.user.id} == ${#authentication.principal.id}">
+          <a th:data-id="${blog.id}" class="editButton"><button>Edit </button></a>
+          <a th:data-id="${blog.id}" class="deleteButton"><button>Delete </button></a>
+        </p>
+      </div>
     </div>
   </div>
 </div>

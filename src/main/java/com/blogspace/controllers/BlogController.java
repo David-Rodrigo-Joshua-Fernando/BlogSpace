@@ -62,7 +62,8 @@ public class BlogController {
     //    This lets you view your profile
     @GetMapping("/profile")
     public String allPostsBlog(Model model){
-        List<Blog> blog = blogDao.findAll();
+        User user = userDao.findById(Utils.currentUserProfile());
+        List<Blog> blog = user.getUsersBlogs();
         model.addAttribute("blogs", blog);
         return "/blog_profile";
     }
@@ -100,16 +101,14 @@ public class BlogController {
     //    This is the delete method
 
     @GetMapping("/{id}/delete")
-    public String deletePost( Model model, @PathVariable long id, Blog blog){
+    public String deletePost(@PathVariable long id, Blog blog){
         User user = Utils.currentUser();
         blog.setUser(user);
         Blog post = blogDao.findById(id);
-//        model.addAttribute("blog", new Blog());
         blogDao.delete(post);
         return "redirect:/blogs";
 
     }
 
-// There is a bug where if you keep creating post it stops working but it starts working after you log back in
 
 }

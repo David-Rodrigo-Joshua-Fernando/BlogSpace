@@ -35,16 +35,15 @@
       <li class="nav-item">
         <a class="nav-link" href="/blogs/about">About Us</a>
       </li>
-
-      <ul class="nav navbar-nav">
-        <form th:action="@{/logout}" th:method="post">
-          <button id="logout">Logout</button>
-        </form>
-
       </ul>
-
-    </ul>
   </div>
+
+
+    <ul class="logout">
+      <form th:action="@{/logout}" th:method="post">
+        <button class="logoutButton">Logout</button>
+      </form>
+    </ul>
 
 
 </nav>
@@ -87,10 +86,7 @@
                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
                  alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
-            <!--                            <img src="../../static/img/WeatherUp-1.png"-->
-            <!--                                 alt="Avatar" class="img-fluid my-5" style="width: 80px; " />-->
-
-            <h5>David Lara</h5>
+            <h5 th:text="${#authentication.principal.username}"></h5>
             <p>Web Developer In Training</p>
             <i class="far fa-edit mb-5"></i>
           </div>
@@ -101,7 +97,7 @@
               <div class="row pt-1">
                 <div class="col-6 mb-3">
                   <h6>Email</h6>
-                  <p class="text-muted">info@example.com</p>
+                  <p class="text-muted" th:text="${#authentication.principal.email}"></p>
                 </div>
                 <div class="col-6 mb-3">
                   <h6>Phone</h6>
@@ -119,11 +115,6 @@
                   <h6>Most Viewed</h6>
                   <p class="text-muted">CodeUp</p>
                 </div>
-              </div>
-              <div class="d-flex justify-content-start">
-                <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
-                <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
-                <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
               </div>
             </div>
           </div>

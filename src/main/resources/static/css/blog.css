@@ -86,6 +86,16 @@ body{
     place-content: center;
 }
 
+.logout {
+display: flex;
+
+}
+
+.logoutButton{
+    background-color: white;
+    border: none;
+}
+
 
 
 
